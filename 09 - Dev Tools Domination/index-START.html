@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Console Tricks!</title>
 </head>
+
 <body>
 
   <p onClick="makeGreen()">×BREAK×DOWN×</p>
@@ -18,29 +20,45 @@
     }
 
     // Regular
-
+    console.log('hello');
     // Interpolated
-
+    console.log('Hello i am %s', 'Ryan')
     // Styled
-
+    console.log('%c I am some great text', 'font-size: 16px; background:red')
     // warning!
-
+    console.warn('oh no');
     // Error :|
-
+    console.error('err')
     // Info
-
+    console.info('Random Snaple fact')
     // Testing
-
+    console.assert(1 == 2)
     // clearing
-
+    console.clear();
     // Viewing DOM Elements
-
+    const p = document.querySelector('p');
+    console.log(p);
+    console.dir(p);
+    console.clear();
     // Grouping together
-
+    dogs.forEach((dog) => {
+      console.groupCollapsed(`${dog.name}`)
+      console.log(`This is ${dog.name}`);
+      console.log(` ${dog.name} is ${dog.age} years old`)
+      console.groupEnd(`${dog.name}`)
+    })
     // counting
-
+    console.count('Ryan');
+    console.count('Ryan');
+    console.count('Ryan');
     // timing
-
+    console.time('fetching data');
+    fetch('https://api.github.com/users/webos').then((data) => {
+      data.json();
+    }).then((data) => {
+      console.timeEnd('fetching data')
+    })
   </script>
 </body>
+
 </html>
